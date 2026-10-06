@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavana's Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; padding: 15px; background: #fdf2f8; color: #333; }
+    .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .question { margin-bottom: 20px; }
+    .options label { display: block; margin: 8px 0; cursor: pointer; }
+    button { background: #ec4899; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; }
+    button:hover { background: #db2777; }
+    .surprise { display: none; margin-top: 20px; background: #f0fdf4; border: 2px dashed #22c55e; padding: 20px; border-radius: 12px; text-align: center; }
+    .status { text-align: center; margin-bottom: 15px; font-weight: bold; color: #9d174d; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>How well do you know Kavana? 💖</h2>
+    <div id="attempt-info" class="status"></div>
+
+    <form id="quizForm">
+      <!-- Q1 -->
+      <div class="question">
+        <p><strong>Q1. What is Kavana's favourite food? 😋</strong></p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="A"> A) Pizza 🍕</label>
+          <label><input type="radio" name="q1" value="B"> B) Chocolate 🍫</label>
+          <label><input type="radio" name="q1" value="C"> C) Pani Puri 😋</label>
+          <label><input type="radio" name="q1" value="D"> D) Biryani 🍗</label>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question">
+        <p><strong>Q2. Who is Kavana's best friend? 👭</strong></p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="A"> A) Thrisha</label>
+          <label><input type="radio" name="q2" value="B"> B) Bhavani</label>
+          <label><input type="radio" name="q2" value="C"> C) Adhi</label>
+          <label><input type="radio" name="q2" value="D"> D) Abhi</label>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question">
+        <p><strong>Q3. What does Kavana like to do?</strong></p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="A"> A) Shopping 🛍️</label>
+          <label><input type="radio" name="q3" value="B"> B) Travel ✈️️❤️</label>
+          <label><input type="radio" name="q3" value="C"> C) Cooking 🍳</label>
+          <label><input type="radio" name="q3" value="D"> D) Gaming 🎮</label>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question">
+        <p><strong>Q4. Which girl does Adhi like? 👀❤️️</strong></p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="A"> A) Chithkala</label>
+          <label><input type="radio" name="q4" value="B"> B) Sharu</label>
+          <label><input type="radio" name="q4" value="C"> C) Spoorthi</label>
+          <label><input type="radio" name="q4" value="D"> D) Nithya</label>
+          <label><input type="radio" name="q4" value="E"> E) Bhoomika</label>
+          <label><input type="radio" name="q4" value="F"> F) None</label>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question">
+        <p><strong>Q5. What is the one thing Kavana always says when she is angry?</strong></p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="A"> A) Leave me alone 😭</label>
+          <label><input type="radio" name="q5" value="B"> B) Fine 🙂</label>
+          <label><input type="radio" name="q5" value="C"> C) Nothing</label>
+          <label><input type="radio" name="q5" value="D"> D) You decide 😂</label>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="question">
+        <p><strong>Q6. What does Kavana fear losing the most?</strong></p>
+        <div class="options">
+          <label><input type="radio" name="q6" value="A"> A) Her phone 📱</label>
+          <label><input type="radio" name="q6" value="B"> B) Her friends ❤️</label>
+          <label><input type="radio" name="q6" value="C"> C) Money 💰</label>
+          <label><input type="radio" name="q6" value="D"> D) Her sleep 😴</label>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="question">
+        <p><strong>Q7. When Kavana is upset, what usually makes her feel better?</strong></p>
+        <div class="options">
+          <label><input type="radio" name="q7" value="A"> A) Food 😋</label>
+          <label><input type="radio" name="q7" value="B"> B) Talking to someone ❤️</label>
+          <label><input type="radio" name="q7" value="C"> C) Sleeping 😴</label>
+          <label><input type="radio" name="q7" value="D"> D) Watching movies 🎬</label>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="question">
+        <p><strong>Q8. Which one describes Kavana and Adhi's friendship best?</strong></p>
+        <div class="options">
+          <label><input type="radio" name="q8" value="A"> A) Only serious talks</label>
+          <label><input type="radio" name="q8" value="B"> B) Only jokes</label>
+          <label><input type="radio" name="q8" value="C"> C) Random talks + fights + support</label>
+          <label><input type="radio" name="q8" value="D"> D) We barely talk</label>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="question">
+        <p><strong>Q9. What does Kavana value the most in a friendship? ❤️</strong></p>
+        <div class="options">
+          <label><input type="radio" name="q9" value="A"> A) Gifts 🎁</label>
+          <label><input type="radio" name="q9" value="B"> B) Money 💰</label>
+          <label><input type="radio" name="q9" value="C"> C) Trust and genuine support 🫶</label>
+          <label><input type="radio" name="q9" value="D"> D) Social media posts 📱</label>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="question">
+        <p><strong>Q10. What does Adhi mean to Kavana? ❤️</strong></p>
+        <div class="options">
+          <label><input type="radio" name="q10" value="A"> A) Just a friend</label>
+          <label><input type="radio" name="q10" value="B"> B) A normal best friend</label>
+          <label><input type="radio" name="q10" value="C"> C) Someone very important in her life</label>
+          <label><input type="radio" name="q10" value="D"> D) Someone she never wants to lose</label>
+        </div>
+      </div>
+
+      <button type="button" id="submitBtn" onclick="checkAnswers()">Submit Quiz</button>
+    </form>
+
+    <div id="surprise" class="surprise">
+      <h2>🎉 Surprise Unlocked! 🎉</h2>
+      <p>Congratulations! You passed the quiz!</p>
+      <p><strong>Your surprise message/link here!</strong></p>
+    </div>
+  </div>
+
+  <script>
+    // Correct Answers
+    const correctAnswers = {
+      q1: "C",
+      q2: "C",
+      q3: "B",
+      q4: "F",
+      q5: "B",
+      q6: "B",
+      q7: "B",
+      q8: "C",
+      q9: "C",
+      q10: "D"
+    };
+
+    const maxAttempts = 2;
+    let attempts = parseInt(localStorage.getItem("quizAttempts") || "0");
+
+    function updateAttemptStatus() {
+      const remaining = maxAttempts - attempts;
+      const statusDiv = document.getElementById("attempt-info");
+      if (attempts >= maxAttempts) {
+        statusDiv.innerText = "❌ You have used all 2 attempts!";
+        document.getElementById("submitBtn").disabled = true;
+        document.getElementById("submitBtn").style.background = "#ccc";
+      } else {
+        statusDiv.innerText = `Chances remaining: ${remaining} of ${maxAttempts}`;
+      }
+    }
+
+    function checkAnswers() {
+      if (attempts >= maxAttempts) return;
+
+      let score = 0;
+      let total = Object.keys(correctAnswers).length;
+
+      for (let key in correctAnswers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      attempts++;
+      localStorage.setItem("quizAttempts", attempts.toString());
+      updateAttemptStatus();
+
+      if (score === total) {
+        document.getElementById("quizForm").style.display = "none";
+        document.getElementById("surprise").style.display = "block";
+      } else {
+        if (attempts < maxAttempts) {
+          alert(`You scored ${score}/${total}. You have 1 attempt remaining! Try again.`);
+        } else {
+          alert(`You scored ${score}/${total}. No more attempts remaining!`);
+        }
+      }
+    }
+
+    updateAttemptStatus();
+  </script>
+</body>
+  </html>
+  
