@@ -158,14 +158,14 @@
       q10: "D"
     };
 
-    const maxAttempts = 5;
+    const maxAttempts = 6;
     let attempts = parseInt(localStorage.getItem("quizAttempts") || "0");
 
     function updateAttemptStatus() {
       const remaining = maxAttempts - attempts;
       const statusDiv = document.getElementById("attempt-info");
       if (attempts >= maxAttempts) {
-        statusDiv.innerText = "❌ You have used all 5 attempts!";
+        statusDiv.innerText = "❌ You have used all 6 attempts!";
         document.getElementById("submitBtn").disabled = true;
         document.getElementById("submitBtn").style.background = "#ccc";
       } else {
@@ -195,7 +195,7 @@
         document.getElementById("surprise").style.display = "block";
       } else {
         if (attempts < maxAttempts) {
-          alert(`You scored ${score}/${total}. You have 5 attempt remaining! Try again.`);
+          alert(`You scored ${score}/${total}. You have 6 attempt remaining! Try again.`);
         } else {
           alert(`You scored ${score}/${total}. No more attempts remaining!`);
         }
