@@ -165,7 +165,7 @@
       const remaining = maxAttempts - attempts;
       const statusDiv = document.getElementById("attempt-info");
       if (attempts >= maxAttempts) {
-        statusDiv.innerText = "❌ You have used all 5 attempts!";
+        statusDiv.innerText = "❌ You have used all 4 attempts!";
         document.getElementById("submitBtn").disabled = true;
         document.getElementById("submitBtn").style.background = "#ccc";
       } else {
@@ -195,7 +195,7 @@
         document.getElementById("surprise").style.display = "block";
       } else {
         if (attempts < maxAttempts) {
-          alert(`You scored ${score}/${total}. You have 5 attempt remaining! Try again.`);
+          alert(`You scored ${score}/${total}. You have 4 attempt remaining! Try again.`);
         } else {
           alert(`You scored ${score}/${total}. No more attempts remaining!`);
         }
