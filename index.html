@@ -158,7 +158,7 @@
       q10: "D"
     };
 
-    const maxAttempts = 5;
+    const maxAttempts = 8;
 let attempts = parseInt(localStorage.getItem("quizAttempts") || "0");
 
 // Automatically clear lockout if old attempts equal or exceed max
@@ -170,7 +170,7 @@ if (attempts >= maxAttempts) {
       const remaining = maxAttempts - attempts;
       const statusDiv = document.getElementById("attempt-info");
       if (attempts >= maxAttempts) {
-        statusDiv.innerText = "❌ You have used all 5 attempts!";
+        statusDiv.innerText = "❌ You have used all 8 attempts!";
         document.getElementById("submitBtn").disabled = true;
         document.getElementById("submitBtn").style.background = "#ccc";
       } else {
@@ -200,7 +200,7 @@ if (attempts >= maxAttempts) {
         document.getElementById("surprise").style.display = "block";
       } else {
         if (attempts < maxAttempts) {
-          alert(`You scored ${score}/${total}. You have 5 attempt remaining! Try again.`);
+          alert(`You scored ${score}/${total}. You have 8 attempt remaining! Try again.`);
         } else {
           alert(`You scored ${score}/${total}. No more attempts remaining!`);
         }
