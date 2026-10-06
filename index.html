@@ -158,9 +158,14 @@
       q10: "D"
     };
 
-    const maxAttempts =4;
-    let attempts = parseInt(localStorage.getItem("quizAttempts") || "0");
+    const maxAttempts = 4;
+let attempts = parseInt(localStorage.getItem("quizAttempts") || "0");
 
+// Automatically clear lockout if old attempts equal or exceed max
+if (attempts >= maxAttempts) {
+  attempts = 0;
+  localStorage.setItem("quizAttempts", "0");
+}
     function updateAttemptStatus() {
       const remaining = maxAttempts - attempts;
       const statusDiv = document.getElementById("attempt-info");
